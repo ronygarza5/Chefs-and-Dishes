@@ -1,0 +1,18 @@
+@using ChefsDishes.Models
+@model Chef
+
+<h1>Add a Chef!</h1>
+<a asp-action="Index" asp-controller="Home">Home</a>
+
+<form asp-action="AddChef" asp-controller="Home" method="POST">
+    <span asp-validation-for="FirstName" class="text-warning"></span>
+    <label asp-for="FirstName">First Name: </label>
+    <input asp-for="FirstName"><br>
+    <span asp-validation-for="LastName" class="text-warning"></span>
+    <label asp-for="LastName">Last Name: </label>
+    <input asp-for="LastName"><br>
+    <span asp-validation-for="Age" class="text-warning"></span>
+    <label asp-for="Age"></label>
+    <input asp-for="Age">
+    <input type="submit" value="Add Chef">
+</form>

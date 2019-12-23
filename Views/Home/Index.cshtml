@@ -1,0 +1,30 @@
+﻿@using ChefsDishes.Models
+@model List<Chef>
+
+<h2> Chefs | <a asp-action="Dishes" asp-controller="Home">Dishes</a></h2>
+<a asp-action="AddChef" asp-controller="Home">Add a chef!</a>
+
+
+
+<h3>Check out our roster of Chefs!</h3>
+
+<table>
+    <thead>
+        <tr class="table table-hover">
+                <th>Name</th>
+                <th>Age</th>
+                <th># of Dishes</th>
+        </tr>
+    </thead>
+    <tbody>
+            @foreach( var c in @Model)
+            {
+                <tr>
+                    <td>@c.FirstName @c.LastName</td>
+                    <td>@c.Age</td>
+                    <td>@c.ChefDishes.Count</td>
+    
+                </tr>
+            }
+    </tbody>
+</table>
